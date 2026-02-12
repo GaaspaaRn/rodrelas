@@ -1,0 +1,719 @@
+@font-face {
+  font-family: 'Expanse';
+  src: url('./assets/fonts/Expanse.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxon';
+  src: url('./assets/fonts/PROXON.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #f0f0f0;
+  --color-accent: #ff2b2b;
+
+  --font-title: 'Expanse', sans-serif;
+  --font-body: 'Proxon', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  margin: 0;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+/* Responsive Visibility */
+.side-nav {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    transform: scale(0.7) translateY(-50%);
+    left: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-sidebar {
+    transform: scale(0.7) translateY(-50%);
+    right: 1rem !important;
+  }
+
+  .hero-subtitle-container {
+    display: none !important;
+    /* Hide container on mobile */
+  }
+
+  .app-header-logo {
+    opacity: 1 !important;
+    /* Force visible on mobile */
+    pointer-events: auto;
+    position: absolute;
+    top: 1.5rem;
+    /* Moved up from 2rem */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease;
+    display: block !important;
+  }
+
+  .app-header-logo img {
+    height: 60px;
+    /* Increased from 40px */
+    object-fit: contain;
+  }
+
+  /* Reduce Nav Spacing on Mobile */
+  .left-nav-container {
+    gap: 0.2rem !important;
+    /* Much closer together */
+  }
+}
+
+@media (min-width: 769px) {
+  .horizontal-section {
+    overflow: hidden !important;
+    /* GSAP handles movement */
+  }
+
+  /* Strictly Hide App Header Logo on Desktop */
+  .app-header-logo {
+    display: none !important;
+    opacity: 0 !important;
+  }
+
+  .content-container {
+    min-height: 100vh;
+    /* Changed from fixed height */
+    height: auto;
+    padding: 2rem 4rem 5rem 4rem;
+    /* Added bottom padding for safety margin */
+    /* Reduced top padding for Desktop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically if content is short */
+    /* Align to top */
+    align-items: center;
+    /* Center horizontally */
+  }
+
+  .section-title {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    color: white;
+    /* White for overlay effect */
+    font-family: var(--font-title);
+    text-align: center;
+    mix-blend-mode: overlay;
+    /* The requested effect */
+    opacity: 0.9;
+  }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: auto;
+    /* Allow grid to grow */
+    width: 100%;
+    /* Ensure full width */
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    min-height: 100vh;
+    /* Changed from 200vh */
+    height: auto;
+    padding: 4.5rem 1.5rem 3rem 1.5rem;
+    /* Reduced bottom padding */
+    /* Reduced top padding, just enough for header */
+    display: flex;
+    flex-direction: column;
+    /* We want the title at top of first screen, content spreading down */
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    /* Smaller mobile title */
+    margin-bottom: 1.5rem;
+    color: white;
+    font-family: var(--font-title);
+    text-align: center;
+    line-height: 1;
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  .media-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-grow: 1;
+    /* Take up rest of space */
+    width: 100%;
+  }
+
+  .single-screen-mobile {
+    min-height: auto !important;
+    /* Changed to auto to reduce extra space */
+    height: auto !important;
+    padding-bottom: 5rem;
+    /* Maintain safety padding */
+    /* Force 1 screen on mobile for specific sections like SHOWS */
+    /* Match Visualizers behavior (flex-start) instead of center,
+         so the title position is identical relative to top */
+    justify-content: flex-start !important;
+  }
+}
+
+.media-placeholder {
+  background: #1a1a1a;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  /* Mobile min height */
+}
+
+.hamburger-btn {
+  display: none !important;
+  /* Default hidden */
+}
+
+@media (max-width: 1024px) {
+
+  /* Only show hamburger if we decide to use it, but user wants links visible.
+     If links are visible, maybe we don't need hamburger at all check? 
+     User said "na versão mobile... continuar os titulos... lado esquerdo".
+     So we hide hamburger globally?
+     "na versão desktop não é pra ter... mobile... continuar titulos" -> implies no hamburger on mobile either if titles are there?
+     Let's keep it hidden for now.
+  */
+  .hamburger-btn {
+    display: none !important;
+  }
+}
+
+/* Home Page Specifics */
+@media (max-width: 768px) {
+  .desktop-hero-logo {
+    display: none !important;
+  }
+
+  .mobile-spotify-btn {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-hero-logo {
+    display: block !important;
+  }
+
+  .mobile-spotify-btn {
+    display: none !important;
+  }
+
+  /* On Desktop, we hide the App header logo for home page via JS opacity, 
+     but let's ensure the overlay logo is centered */
+  /* Desktop Layout Tweaks */
+  .hero-subtitle {
+    display: block !important;
+    margin-top: -10px !important;
+    /* Move closer to logo */
+  }
+}
+
+.desktop-nav {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: block !important;
+  }
+}
+
+/* --- Social Icons Refactor --- */
+.social-icons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  /* Improve touch target on mobile if needed, though they are usually spaced out */
+}
+
+.social-icon:hover {
+  color: var(--color-accent);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* --- Left Nav Refactor --- */
+.left-nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.nav-link {
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+  /* Increase touch target vertical padding */
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link.active {
+  color: var(--color-accent);
+  /* #ff2b2b */
+  opacity: 1;
+}
+
+/* --- Scroll Indicator --- */
+/* --- Scroll Indicator --- */
+.scroll-indicator {
+  /* Mobile: Flow positioning */
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 100%;
+  /* Ensure centering works in both modes */
+}
+
+@media (min-width: 769px) {
+  .scroll-indicator {
+    position: absolute;
+    margin-top: 0;
+    bottom: auto;
+    top: 10vh;
+    /* Updated to 10vh as requested */
+  }
+}
+
+.scroll-indicator span {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.arrow-down {
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: rotate(45deg);
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* --- Shows Section --- */
+.shows-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  gap: 1.5rem;
+}
+
+.show-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.show-item:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.show-item:hover .day,
+.show-item:hover .venue {
+  color: var(--color-accent);
+}
+
+.show-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.day {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.month {
+  font-family: var(--font-title);
+  /* Changed to title font for better match with day */
+  font-size: 1rem;
+  opacity: 0.7;
+  letter-spacing: 2px;
+}
+
+.show-separator {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 2rem;
+  display: none;
+  /* Hidden on mobile by default, maybe show on desktop? Let's keep minimal with spacing */
+}
+
+@media (min-width: 769px) {
+  .show-separator {
+    display: block;
+  }
+}
+
+.show-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Align right */
+  text-align: right;
+  flex-grow: 1;
+}
+
+.location {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+}
+
+.venue {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+/* Mobile Adjustments for Shows */
+@media (max-width: 768px) {
+  .day {
+    font-size: 2rem;
+  }
+
+  .venue {
+    font-size: 1.2rem;
+  }
+
+  .show-item {
+    padding: 1rem 0;
+  }
+}
+
+/* --- Contact Section --- */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    flex-direction: row;
+    align-items: center;
+    /* Center Vertically */
+    gap: 5rem;
+  }
+}
+
+.contact-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* Center image in its column */
+  max-width: 400px;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(0%);
+  /* Keep color or make grayscale if desired */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.contact-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  max-width: 600px;
+}
+
+.contact-bio {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.contact-btn {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  margin-top: 2rem;
+  color: var(--color-accent);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  align-self: flex-start;
+  /* Maintain alignment */
+  background: transparent;
+  /* Reset background */
+  box-shadow: none;
+  /* Reset shadow */
+  border-radius: 0;
+  /* Reset radius if needed, or keep small */
+}
+
+.contact-btn:hover {
+  background: var(--color-accent);
+  color: #050801;
+  /* Dark text on active */
+  box-shadow: 0 0 5px var(--color-accent),
+    0 0 25px var(--color-accent),
+    0 0 50px var(--color-accent),
+    0 0 200px var(--color-accent);
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.contact-btn span {
+  position: absolute;
+  display: block;
+}
+
+.contact-btn span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent));
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.contact-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--color-accent));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.contact-btn span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--color-accent));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.contact-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--color-accent));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-content-wrapper {
+    text-align: left;
+    /* Keep left aligned on mobile too, looks better for reading */
+    align-items: flex-start;
+  }
+
+  .contact-btn {
+    width: auto;
+    /* Match text size approx, not full width */
+    text-align: center;
+    align-self: center;
+    /* Centered */
+    /* Align with text */
+    margin-top: 0.5rem;
+    /* Closer to text */
+  }
+
+  .contact-image-wrapper {
+    max-width: 300px;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .contact-container {
+    gap: 2rem;
+    padding-bottom: 8rem;
+    /* Reduced slightly from 10rem */
+    /* Ensure space for footer */
+  }
+}
