@@ -74,7 +74,7 @@ const Home = () => {
                         color: 'white', opacity: 0.9, textTransform: 'uppercase', margin: 0,
                         mixBlendMode: 'difference'
                     }}>
-                        The Official Rodriz Platform
+                        DJ & Produtor
                     </p>
                 </div>
 
