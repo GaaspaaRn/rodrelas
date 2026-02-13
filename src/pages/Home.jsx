@@ -114,7 +114,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 4 - Vertical (Visualizer -> VIDEOS) */}
-            <div id="visualizer" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 100%)' }}>
+            <div id="visualizer" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 60%, #0a0a0a 100%)' }}>
                 <VerticalSection className="vis-sec">
                     <div className="content-container">
                         <h2 className="section-title">VIDEOS</h2>
@@ -174,7 +174,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 7 - Vertical (Contact / End) */}
-            <div id="contact" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 100%)' }}>
+            <div id="contact" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 60%, #0a0a0a 100%)' }}>
                 <VerticalSection>
                     <div className="content-container single-screen-mobile">
                         <h2 className="section-title">CONTATO</h2>

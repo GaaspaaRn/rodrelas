@@ -19,9 +19,9 @@
 
 /* Scoped variables */
 .gruv-button-wrapper {
-    --gruv-bright-blue: rgb(0, 100, 255);
-    --gruv-bright-green: rgb(0, 255, 0);
-    --gruv-bright-red: rgb(255, 0, 0);
+    --gruv-bright-blue: rgb(150, 0, 0);
+    --gruv-bright-green: rgb(255, 43, 43);
+    --gruv-bright-red: rgb(255, 100, 100);
     --gruv-background: black;
     --gruv-foreground: white;
     --gruv-border-size: 2px;
@@ -51,7 +51,7 @@
     --gruv-border-angle-2: 90deg;
     --gruv-border-angle-3: 180deg;
     color: inherit;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     /* Adjusted for footer */
     font-family: inherit;
     border: 0;
@@ -84,7 +84,7 @@
 
 .gruv-button div {
     background: var(--gruv-background);
-    padding: 0.2em 0.8em;
+    padding: 0.1em 0.6em;
     /* Adjusted padding for footer compact look */
     border-radius: calc(var(--gruv-border-radius) - var(--gruv-border-size));
     color: var(--gruv-foreground);

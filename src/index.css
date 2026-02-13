@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Permanent Marker';
-  src: url('./assets/fonts/PermanentMarker-Regular.woff2') format('woff2');
+  font-family: 'Akira';
+  src: url('./assets/fonts/Akira Expanded Demo.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
   --color-text: #f0f0f0;
   --color-accent: #ff2b2b;
 
-  --font-title: 'Permanent Marker', sans-serif;
+  --font-title: 'Akira', sans-serif;
   --font-body: 'Oswald', sans-serif;
 }
 

@@ -64,7 +64,7 @@ const HorizontalSection = ({ children, className, id }) => {
                 top: 0,
                 left: 0,
                 width: '100%',
-                height: '150px',
+                height: '250px',
                 background: 'linear-gradient(to bottom, #0a0a0a, transparent)',
                 zIndex: 10,
                 pointerEvents: 'none'
@@ -87,7 +87,7 @@ const HorizontalSection = ({ children, className, id }) => {
                 bottom: 0,
                 left: 0,
                 width: '100%',
-                height: '150px',
+                height: '250px',
                 background: 'linear-gradient(to top, #0a0a0a, transparent)',
                 zIndex: 10,
                 pointerEvents: 'none'
