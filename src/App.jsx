@@ -8,6 +8,8 @@ import NoiseOverlay from './components/NoiseOverlay'
 import SidebarMenu from './components/SidebarMenu'
 import SocialIcons from './components/SocialIcons'
 import LeftNav from './components/LeftNav'
+import GruvButton from './components/GruvButton'
+
 
 import Home from './pages/Home'
 import Sons from './pages/Sons'
@@ -168,11 +170,15 @@ function App() {
       }}>
         <div style={{ pointerEvents: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
           <h4 style={{ fontFamily: 'var(--font-title)', fontSize: '1.2rem', letterSpacing: '2px', marginBottom: '0.5rem' }}>BOOKINGS</h4>
-          <p style={{ margin: 0 }}>47 99149-8083 (PR-SC-RS)</p>
-          <p style={{ margin: 0 }}>42 99152-8917 (CENTRO-SUDESTE-NORTE)</p>
+          <p style={{ margin: 0 }}>
+            Tratar com Booker: <a href="https://wa.me/5547991529726?text=Ol%C3%A1%2C%20quero%20contratar%20o%20DJ%20Rodriz" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>47 9 9152-9726</a>
+          </p>
           <div style={{ marginTop: '1rem', opacity: 0.7, fontSize: '0.7rem' }}>
             © 2026 DJ Rodriz – Todos os direitos reservados<br />
-            Desenvolvido por <a href="#" style={{ textDecoration: 'underline' }}>GRÜV.</a>
+            <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+              <span>Desenvolvido por</span>
+              <GruvButton />
+            </div>
           </div>
         </div>
       </footer>

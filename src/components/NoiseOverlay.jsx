@@ -57,7 +57,7 @@ const NoiseOverlay = () => {
                 height: '100%',
                 pointerEvents: 'none',
                 zIndex: 9999,
-                opacity: 0.08,
+                opacity: 0.15,
                 mixBlendMode: 'overlay',
             }}
         />

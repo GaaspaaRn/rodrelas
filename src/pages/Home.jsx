@@ -92,7 +92,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 2 - Vertical (Sons) */}
-            <div id="sons" style={{ position: 'relative', zIndex: 20, background: '#0a0a0a' }}>
+            <div id="sons" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #2e0909 0%, #0a0a0a 100%)' }}>
                 <VerticalSection className="sons-sec">
                     <div className="content-container">
                         <h2 className="section-title">SONS</h2>
@@ -114,7 +114,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 4 - Vertical (Visualizer -> VIDEOS) */}
-            <div id="visualizer" style={{ position: 'relative', zIndex: 20, background: '#0a0a0a' }}>
+            <div id="visualizer" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 100%)' }}>
                 <VerticalSection className="vis-sec">
                     <div className="content-container">
                         <h2 className="section-title">VIDEOS</h2>
@@ -136,7 +136,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 6 - Vertical (SHOWS) - 1 Screen Mobile/1 Screen Desktop */}
-            <div id="shows" style={{ position: 'relative', zIndex: 20, background: '#0a0a0a' }}>
+            <div id="shows" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #2e0909 0%, #0a0a0a 100%)' }}>
                 <VerticalSection>
                     {/* Removed single-screen-mobile centering force to match Visualizers top spacing */}
                     <div className="content-container single-screen-mobile">
@@ -174,7 +174,7 @@ const Home = () => {
             </HorizontalSection>
 
             {/* BLOCK 7 - Vertical (Contact / End) */}
-            <div id="contact" style={{ position: 'relative', zIndex: 20, background: '#0a0a0a' }}>
+            <div id="contact" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #0a0a0a 0%, #2e0909 100%)' }}>
                 <VerticalSection>
                     <div className="content-container single-screen-mobile">
                         <h2 className="section-title">CONTATO</h2>
@@ -190,11 +190,11 @@ const Home = () => {
                                     Aos 18 anos, consolidou seu nome e foi reconhecido em 2025 como uma das revelações do ano.
                                 </p>
                                 <p className="contact-bio">
-                                    Com uma forte leitura de pista, chega em 2026 um dos nomes mais promissores da cena em ascensão.
+                                    Com uma forte leitura de pista, chega em 2026 como um dos nomes mais promissores da cena em ascensão.
                                 </p>
 
                                 <a
-                                    href="https://wa.me/5547991498083?text=Ol%C3%A1%2C%20tudo%20certo%3F"
+                                    href="https://wa.me/5547991529726?text=Ol%C3%A1%2C%20tudo%20certo%3F"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="contact-btn"

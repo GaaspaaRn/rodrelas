@@ -35,7 +35,7 @@ const HorizontalSection = ({ children, className, id }) => {
                 end: () => `+=${Math.abs(getScrollAmount())}`, // Exact width diff
                 pin: true,
                 animation: tween,
-                scrub: 1, // Slight smoothing for "weight"
+                scrub: true, // Let Lenis handle the smoothing for uniformity
                 invalidateOnRefresh: true,
                 anticipatePin: 1
             });
@@ -58,6 +58,18 @@ const HorizontalSection = ({ children, className, id }) => {
                 overflow: 'hidden' // Force hidden for GSAP
             }}
         >
+            {/* Gradient Overlays for smooth transition */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '150px',
+                background: 'linear-gradient(to bottom, #0a0a0a, transparent)',
+                zIndex: 10,
+                pointerEvents: 'none'
+            }}></div>
+
             <div
                 ref={trackRef}
                 className="horizontal-track"
@@ -69,6 +81,17 @@ const HorizontalSection = ({ children, className, id }) => {
             >
                 {children}
             </div>
+
+            <div style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '100%',
+                height: '150px',
+                background: 'linear-gradient(to top, #0a0a0a, transparent)',
+                zIndex: 10,
+                pointerEvents: 'none'
+            }}></div>
         </section>
     );
 };

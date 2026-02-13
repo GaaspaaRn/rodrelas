@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'Expanse';
-  src: url('./assets/fonts/Expanse.woff2') format('woff2');
+  font-family: 'Permanent Marker';
+  src: url('./assets/fonts/PermanentMarker-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Proxon';
-  src: url('./assets/fonts/PROXON.woff2') format('woff2');
+  font-family: 'Oswald';
+  src: url('./assets/fonts/Oswald-Light.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,8 +17,8 @@
   --color-text: #f0f0f0;
   --color-accent: #ff2b2b;
 
-  --font-title: 'Expanse', sans-serif;
-  --font-body: 'Proxon', sans-serif;
+  --font-title: 'Permanent Marker', sans-serif;
+  --font-body: 'Oswald', sans-serif;
 }
 
 html,
@@ -242,6 +242,10 @@ a {
 }
 
 /* Home Page Specifics */
+.alive-gradient {
+  background: radial-gradient(circle at center, #2e0909 0%, #0a0a0a 100%) !important;
+}
+
 @media (max-width: 768px) {
   .desktop-hero-logo {
     display: none !important;
