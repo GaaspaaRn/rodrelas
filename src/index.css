@@ -752,6 +752,10 @@ a {
     align-self: center;
   }
 
+  #contact .mobile-hidden {
+    display: block !important;
+  }
+
   #contact::before {
     content: '';
     position: absolute;
