@@ -180,7 +180,7 @@ function App() {
           <p style={{ margin: 0 }}>
             Tratar com Booker: <a href="https://wa.me/5547991529726?text=Ol%C3%A1%2C%20quero%20contratar%20o%20DJ%20Rodriz" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>47 9 9152-9726</a>
           </p>
-          <div style={{ marginTop: '1rem', opacity: 0.7, fontSize: '0.7rem' }}>
+          <div style={{ marginTop: '0.1rem', opacity: 0.7, fontSize: '0.7rem' }}>
             <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
               <span>Desenvolvido por</span>
               <GruvButton />
