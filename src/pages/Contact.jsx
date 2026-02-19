@@ -1,3 +1,23 @@
+import SEOHead from '../components/SEOHead';
+
+const contactJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contrate DJ Rodriz",
+    "description": "Entre em contato para contratar o DJ Rodriz para festas, eventos e casas noturnas.",
+    "url": "https://djrodriz.com/contact",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "DJ Rodriz",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-47-99152-9726",
+            "contactType": "booking",
+            "availableLanguage": "Portuguese"
+        }
+    }
+};
+
 const Contact = () => {
     return (
         <div style={{
@@ -11,6 +31,13 @@ const Contact = () => {
             textAlign: 'center',
             gap: '2rem'
         }}>
+            <SEOHead
+                title="Contato e Booking"
+                description="Contrate o DJ Rodriz para sua festa ou evento. Booking para casas noturnas, festivais e eventos corporativos em Santa Catarina, Paraná, Rio Grande do Sul e todo o Brasil."
+                keywords="contratar DJ Rodriz, booking DJ, contratar DJ festa, contratar DJ evento, DJ para casas noturnas, contratar DJ Santa Catarina, contratar DJ Paraná, contratar DJ sul, orçamento DJ"
+                canonical="/contact"
+                jsonLd={contactJsonLd}
+            />
             <div style={{
                 width: '200px',
                 height: '200px',

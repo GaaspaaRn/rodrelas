@@ -1,0 +1,7 @@
+# robots.txt - DJ Rodriz
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://djrodriz.com/sitemap.xml

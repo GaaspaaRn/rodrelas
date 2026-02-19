@@ -5,8 +5,30 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HorizontalSection from '../components/HorizontalSection';
 import VerticalSection from '../components/VerticalSection';
 import VideoBlock from '../components/VideoBlock';
+import SEOHead from '../components/SEOHead';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "DJ Rodriz",
+    "alternateName": "Rodriz",
+    "jobTitle": "DJ e Produtor Musical",
+    "description": "DJ e produtor musical especialista em megafunk, reconhecido como uma das revelações de 2025. Um dos nomes mais promissores da cena do Sul do Brasil.",
+    "url": "https://djrodriz.com",
+    "image": "https://djrodriz.com/fotos/dj-rodriz-foto.png",
+    "knowsAbout": ["Megafunk", "DJ Set", "Produção Musical", "Funk"],
+    "workLocation": {
+        "@type": "Place",
+        "name": "Sul do Brasil",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "SC",
+            "addressCountry": "BR"
+        }
+    }
+};
 
 const Home = () => {
     // Media Arrays
@@ -39,6 +61,13 @@ const Home = () => {
 
     return (
         <div style={{ position: 'relative' }}>
+            <SEOHead
+                title="DJ e Produtor Musical | Contratar DJ Megafunk"
+                description="DJ Rodriz — DJ e Produtor Musical especialista em megafunk. Contrate o melhor DJ do Sul do Brasil para suas festas e eventos em Santa Catarina, Paraná e Rio Grande do Sul. Energia de pista e impacto sonoro."
+                keywords="DJ Rodriz, contratar DJ, DJ megafunk, contratar DJ Santa Catarina, contratar DJ Paraná, contratar DJ Rio Grande do Sul, DJ sul, DJ festa, DJ evento, DJ produtor musical, DJ Florianópolis, DJ Curitiba, megafunk"
+                canonical="/"
+                jsonLd={homeJsonLd}
+            />
             {/* Hero Overlay - Desktop Only */}
             <div style={{
                 position: 'fixed',

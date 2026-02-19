@@ -1,6 +1,20 @@
 import HorizontalSection from '../components/HorizontalSection';
 import VerticalSection from '../components/VerticalSection';
 import VideoBlock from '../components/VideoBlock';
+import SEOHead from '../components/SEOHead';
+
+const sonsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MusicPlaylist",
+    "name": "Sons - DJ Rodriz",
+    "description": "Ouça as músicas e produções do DJ Rodriz. Megafunk, funk e produções originais.",
+    "url": "https://djrodriz.com/sons",
+    "numTracks": 4,
+    "creator": {
+        "@type": "MusicGroup",
+        "name": "DJ Rodriz"
+    }
+};
 
 const Sons = () => {
     // Placeholder data
@@ -16,6 +30,13 @@ const Sons = () => {
 
     return (
         <div className="sons-page">
+            <SEOHead
+                title="Sons e Músicas"
+                description="Ouça as músicas e produções do DJ Rodriz. Megafunk, funk e produções musicais originais. Disponível no Spotify e todas as plataformas digitais."
+                keywords="DJ Rodriz músicas, DJ Rodriz Spotify, megafunk, funk, produções DJ Rodriz, músicas DJ sul, DJ produtor musical"
+                canonical="/sons"
+                jsonLd={sonsJsonLd}
+            />
             {/* SECTION 1 - Horizontal */}
             <HorizontalSection className="section-1">
                 {horizontalVideos1.map((vid, i) => (
