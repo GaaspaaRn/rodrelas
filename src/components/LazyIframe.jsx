@@ -44,11 +44,11 @@ const LazyIframe = ({ src, title, width = '100%', height = 352, style = {}, allo
                     src={src}
                     title={title}
                     width="100%"
-                    height="100%"
+                    height={height}
                     frameBorder="0"
                     allow={allow}
                     loading="lazy"
-                    style={{ border: 'none', borderRadius: '12px' }}
+                    style={{ border: 'none', borderRadius: '12px', width: '100%', height: '100%' }}
                     {...props}
                 />
             ) : (
