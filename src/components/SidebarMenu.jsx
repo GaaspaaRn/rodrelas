@@ -47,6 +47,9 @@ const SidebarMenu = ({ isOpen, onClose }) => {
             />
             <div
                 ref={menuRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Menu de navegação"
                 style={{
                     position: 'fixed',
                     top: 0,
@@ -87,6 +90,7 @@ const SidebarMenu = ({ isOpen, onClose }) => {
 
                 <button
                     onClick={onClose}
+                    aria-label="Fechar menu"
                     style={{
                         position: 'absolute',
                         top: '2rem',

@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HorizontalSection from '../components/HorizontalSection';
 import VerticalSection from '../components/VerticalSection';
 import VideoBlock from '../components/VideoBlock';
+import LazyIframe from '../components/LazyIframe';
 import SEOHead from '../components/SEOHead';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,6 @@ const homeJsonLd = {
 };
 
 const Home = () => {
-    // Media Arrays
     // Media Arrays
     const videosSet1 = ['/videos/rodriz.mp4', '/videos/rodriz1.mp4'];
     const videosSet2 = ['/videos/rodriz2.mp4', '/videos/rodriz3.mp4'];
@@ -86,9 +86,13 @@ const Home = () => {
                     className="desktop-hero-logo"
                     src="/fotos/logo-dj-rodriz.PNG"
                     alt="DJ RODRIZ"
+                    width="500"
+                    height="281"
+                    fetchPriority="high"
                     style={{
                         width: '60%',
                         maxWidth: '500px',
+                        height: 'auto',
                         objectFit: 'contain',
                         filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.4))'
                     }}
@@ -126,10 +130,10 @@ const Home = () => {
                     <div className="content-container">
                         <h2 className="section-title">SONS</h2>
                         <div className="media-grid">
-                            <iframe data-testid="embed-iframe" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/track/1T0Za0ldouSRjRMH94SwWI?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            <iframe data-testid="embed-iframe" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/track/6i1q1P90W9fsW6S9UMv1ay?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            <iframe data-testid="embed-iframe" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/track/6klY5Kay7mnIz1I2qTH3Kf?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            <iframe data-testid="embed-iframe" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/track/3OXMbP3WG2XVrMELZYlmG6?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            <LazyIframe src="https://open.spotify.com/embed/track/1T0Za0ldouSRjRMH94SwWI?utm_source=generator" title="DJ Rodriz - Faixa no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+                            <LazyIframe src="https://open.spotify.com/embed/track/6i1q1P90W9fsW6S9UMv1ay?utm_source=generator" title="DJ Rodriz - Faixa no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+                            <LazyIframe src="https://open.spotify.com/embed/track/6klY5Kay7mnIz1I2qTH3Kf?utm_source=generator" title="DJ Rodriz - Faixa no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+                            <LazyIframe src="https://open.spotify.com/embed/track/3OXMbP3WG2XVrMELZYlmG6?utm_source=generator" title="DJ Rodriz - Faixa no Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
                         </div>
                     </div>
                 </VerticalSection>
@@ -148,10 +152,10 @@ const Home = () => {
                     <div className="content-container">
                         <h2 className="section-title">VIDEOS</h2>
                         <div className="media-grid">
-                            <iframe width="100%" height="352" style={{ borderRadius: '12px' }} src="https://www.youtube.com/embed/G2Ez0dVPx-g?si=08jI4dI38XO8C_Gv" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            <iframe width="100%" height="352" style={{ borderRadius: '12px' }} src="https://www.youtube.com/embed/sHf7p-rlgVI?si=Pv-8OXVPBohT8XNi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            <iframe width="100%" height="352" style={{ borderRadius: '12px' }} src="https://www.youtube.com/embed/x9mZ-fCKjLQ?si=ism9kwanJaY31uuY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            <iframe width="100%" height="352" style={{ borderRadius: '12px' }} src="https://www.youtube.com/embed/uFLGdHyCHUc?si=MZGy6WO1e_ISjpFc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                            <LazyIframe src="https://www.youtube.com/embed/G2Ez0dVPx-g?si=08jI4dI38XO8C_Gv" title="DJ Rodriz - Vídeo no YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+                            <LazyIframe src="https://www.youtube.com/embed/sHf7p-rlgVI?si=Pv-8OXVPBohT8XNi" title="DJ Rodriz - Vídeo no YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+                            <LazyIframe src="https://www.youtube.com/embed/x9mZ-fCKjLQ?si=ism9kwanJaY31uuY" title="DJ Rodriz - Vídeo no YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
+                            <LazyIframe src="https://www.youtube.com/embed/uFLGdHyCHUc?si=MZGy6WO1e_ISjpFc" title="DJ Rodriz - Vídeo no YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen />
                         </div>
                     </div>
                 </VerticalSection>
@@ -164,10 +168,9 @@ const Home = () => {
                 ))}
             </HorizontalSection>
 
-            {/* BLOCK 6 - Vertical (SHOWS) - 1 Screen Mobile/1 Screen Desktop */}
+            {/* BLOCK 6 - Vertical (SHOWS) */}
             <div id="shows" style={{ position: 'relative', zIndex: 20, background: 'radial-gradient(circle at center, #2e0909 0%, #0a0a0a 100%)' }}>
                 <VerticalSection>
-                    {/* Removed single-screen-mobile centering force to match Visualizers top spacing */}
                     <div className="content-container single-screen-mobile">
                         <h2 className="section-title">SHOWS</h2>
 
@@ -209,7 +212,14 @@ const Home = () => {
                         <h2 className="section-title">CONTATO</h2>
                         <div className="contact-container">
                             <div className="contact-image-wrapper">
-                                <img src="/fotos/dj-rodriz-foto.png" alt="DJ Rodriz" className="contact-image" />
+                                <img
+                                    src="/fotos/dj-rodriz-foto.png"
+                                    alt="DJ Rodriz"
+                                    className="contact-image"
+                                    width="400"
+                                    height="600"
+                                    loading="lazy"
+                                />
                             </div>
                             <div className="contact-content-wrapper">
                                 <p className="contact-bio mobile-hidden">

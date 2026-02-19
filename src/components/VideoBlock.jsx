@@ -1,17 +1,41 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const VideoBlock = ({ src, className }) => {
     const videoRef = useRef(null);
+    const containerRef = useRef(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        // Ensure video plays
-        if (videoRef.current) {
-            videoRef.current.play().catch(e => console.log("Autoplay blocked", e));
-        }
-    }, []);
+        const el = containerRef.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                const video = videoRef.current;
+                if (!video) return;
+
+                if (entry.isIntersecting) {
+                    if (!isLoaded) {
+                        video.src = src;
+                        setIsLoaded(true);
+                    }
+                    video.play().catch(() => { });
+                } else {
+                    if (isLoaded) {
+                        video.pause();
+                    }
+                }
+            },
+            { rootMargin: '200px' }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [src, isLoaded]);
 
     return (
         <div
+            ref={containerRef}
             className={className}
             style={{
                 width: '100vw',
@@ -24,19 +48,18 @@ const VideoBlock = ({ src, className }) => {
         >
             <video
                 ref={videoRef}
-                src={src}
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="none"
                 style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    opacity: 0.8 // Slightly darken for texture visibility
+                    opacity: 0.8
                 }}
             />
-            {/* Grain/Texture logic can be handled globablly or here if specific per video */}
         </div>
     );
 };

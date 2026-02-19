@@ -32,6 +32,7 @@ const SocialIcons = ({ className }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={icon.name}
+                    aria-label={icon.name}
                     className="social-icon"
                 >
                     <svg

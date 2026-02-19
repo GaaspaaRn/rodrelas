@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
@@ -10,12 +10,13 @@ import SocialIcons from './components/SocialIcons'
 import LeftNav from './components/LeftNav'
 import GruvButton from './components/GruvButton'
 
-
 import Home from './pages/Home'
-import Sons from './pages/Sons'
-import Visualizer from './pages/Visualizer'
-import Shows from './pages/Shows'
-import Contact from './pages/Contact'
+
+// Lazy load non-home pages for code splitting
+const Sons = lazy(() => import('./pages/Sons'))
+const Visualizer = lazy(() => import('./pages/Visualizer'))
+const Shows = lazy(() => import('./pages/Shows'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -74,26 +75,25 @@ function App() {
         width: '100%',
         padding: '2rem',
         display: 'flex',
-        justifyContent: 'center', // Always center for now, we'll offset if needed
+        justifyContent: 'center',
         alignItems: 'flex-start',
         zIndex: 9997,
         pointerEvents: 'none',
         height: '100px'
       }}>
-        {/* Logo Logic:
-            Desktop Home: Center (handled by Home.jsx overlay, so opacity 0 here)
-            Mobile Home: Top Center (Visible here)
-            Other Pages: Top Center? Or Left?
-            User said "mobile... logo centralizado ao topo no meio".
-        */}
         <div className="logo app-header-logo">
-          <img src="/fotos/logo-dj-rodriz.PNG" alt="DJ Rodriz" />
+          <img
+            src="/fotos/logo-dj-rodriz.PNG"
+            alt="DJ Rodriz"
+            width="187"
+            height="105"
+          />
         </div>
 
-        {/* Hamburger - Hidden via CSS class .hamburger-btn globally as per request/implication */}
         <button
           className="hamburger-btn"
           onClick={() => setIsMenuOpen(true)}
+          aria-label="Abrir menu de navegação"
           style={{
             background: 'transparent',
             border: 'none',
@@ -117,20 +117,25 @@ function App() {
       </header>
 
       {/* Left Navigation (Desktop & Mobile) */}
-      <div style={{
-        position: 'fixed',
-        left: '2rem',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        zIndex: 9990,
-        pointerEvents: 'auto',
-        mixBlendMode: 'difference'
-      }} className="side-nav">
+      <nav
+        aria-label="Navegação principal"
+        style={{
+          position: 'fixed',
+          left: '2rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 9990,
+          pointerEvents: 'auto',
+          mixBlendMode: 'difference'
+        }}
+        className="side-nav"
+      >
         <LeftNav />
-      </div>
+      </nav>
 
       {/* Social Icons (Right Sidebar) */}
-      <div
+      <nav
+        aria-label="Redes sociais"
         className="social-sidebar"
         style={{
           position: 'fixed',
@@ -142,16 +147,18 @@ function App() {
           mixBlendMode: 'difference'
         }}>
         <SocialIcons />
-      </div>
+      </nav>
 
       <main>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/sons" element={<Sons />} />
-          <Route path="/visualizer" element={<Visualizer />} />
-          <Route path="/shows" element={<Shows />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0a0a0a' }} />}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/sons" element={<Sons />} />
+            <Route path="/visualizer" element={<Visualizer />} />
+            <Route path="/shows" element={<Shows />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <footer style={{
@@ -165,7 +172,7 @@ function App() {
         color: 'white',
         textAlign: 'center',
         padding: '0 1rem',
-        pointerEvents: 'none', // Allow clicks through
+        pointerEvents: 'none',
         mixBlendMode: 'difference'
       }}>
         <div style={{ pointerEvents: 'auto', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
