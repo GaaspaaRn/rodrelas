@@ -725,6 +725,14 @@ a {
   #contact {
     background: url('/fotos/contato-mobile.jpg') center center / cover no-repeat !important;
     position: relative;
+    min-height: 100vh !important;
+  }
+
+  #contact .content-container.single-screen-mobile {
+    min-height: 100vh !important;
+    height: 100vh !important;
+    justify-content: center !important;
+    padding-bottom: 2rem;
   }
 
   #contact::before {
