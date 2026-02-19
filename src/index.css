@@ -731,8 +731,25 @@ a {
   #contact .content-container.single-screen-mobile {
     min-height: 100vh !important;
     height: 100vh !important;
-    justify-content: center !important;
-    padding-bottom: 2rem;
+    justify-content: flex-start !important;
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+
+  #contact .contact-container {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #contact .contact-content-wrapper {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  #contact .contact-btn {
+    margin-top: auto !important;
+    align-self: center;
   }
 
   #contact::before {
