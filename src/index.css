@@ -745,6 +745,12 @@ a {
   #contact .contact-content-wrapper {
     flex: 1;
     justify-content: flex-start;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  #contact .contact-bio {
+    text-transform: uppercase;
   }
 
   #contact .contact-btn {
