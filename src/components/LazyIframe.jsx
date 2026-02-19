@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 
-const LazyIframe = ({ src, title, width = '100%', height = '352', style = {}, allow = '', ...props }) => {
+const LazyIframe = ({ src, title, width = '100%', height = 352, style = {}, allow = '', ...props }) => {
     const containerRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -22,12 +22,17 @@ const LazyIframe = ({ src, title, width = '100%', height = '352', style = {}, al
         return () => observer.disconnect();
     }, []);
 
+    // Normalize height to a valid CSS value
+    const cssHeight = typeof height === 'number' ? `${height}px`
+        : /^\d+$/.test(height) ? `${height}px`
+            : height;
+
     return (
         <div
             ref={containerRef}
             style={{
                 width,
-                height: typeof height === 'number' ? `${height}px` : height,
+                height: cssHeight,
                 borderRadius: '12px',
                 overflow: 'hidden',
                 background: '#1a1a1a',
