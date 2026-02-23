@@ -32,9 +32,9 @@ function App() {
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smooth: true,
-      mouseMultiplier: 0.6,
+      mouseMultiplier: 0.3,
       smoothTouch: false,
-      touchMultiplier: 1.5,
+      touchMultiplier: 0.75,
     })
 
     // Single update source via GSAP ticker (no duplicate RAF)
