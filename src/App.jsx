@@ -13,10 +13,6 @@ import GruvButton from './components/GruvButton'
 import Home from './pages/Home'
 
 // Lazy load non-home pages for code splitting
-const Sons = lazy(() => import('./pages/Sons'))
-const Visualizer = lazy(() => import('./pages/Visualizer'))
-const Shows = lazy(() => import('./pages/Shows'))
-const Contact = lazy(() => import('./pages/Contact'))
 const Press = lazy(() => import('./pages/Press'))
 const Contrate = lazy(() => import('./pages/Contrate'))
 
@@ -151,10 +147,6 @@ function App() {
         <Suspense fallback={<div style={{ minHeight: '100vh', background: '#0a0a0a' }} />}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
-            <Route path="/sons" element={<Sons />} />
-            <Route path="/visualizer" element={<Visualizer />} />
-            <Route path="/shows" element={<Shows />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/press" element={<Press />} />
             <Route path="/contrate" element={<Contrate />} />
           </Routes>

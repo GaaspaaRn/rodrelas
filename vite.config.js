@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     // Pre-rendering runs locally only (Vercel lacks Chrome system libs for Puppeteer)
     !isCI && (await import('vite-plugin-seo-prerender')).default({
-      routes: ['/', '/sons', '/visualizer', '/shows', '/contact', '/press', '/contrate'],
+      routes: ['/', '/press', '/contrate'],
       delay: 3000,
       removeStyle: false
     })
