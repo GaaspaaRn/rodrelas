@@ -35,7 +35,7 @@ const HorizontalSection = ({ children, className, id }) => {
                 end: () => `+=${Math.abs(getScrollAmount())}`, // Exact width diff
                 pin: true,
                 animation: tween,
-                scrub: true, // Let Lenis handle the smoothing for uniformity
+                scrub: 1.5, // Smooth 1.5s lag for cinematic horizontal scrolling
                 invalidateOnRefresh: true,
                 anticipatePin: 1
             });

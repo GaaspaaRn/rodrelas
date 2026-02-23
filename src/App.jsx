@@ -26,29 +26,25 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 3.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
+      lerp: 0.06,
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
+      mouseMultiplier: 0.6,
       smoothTouch: false,
-      touchMultiplier: 2,
+      touchMultiplier: 1.5,
     })
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
+    // Single update source via GSAP ticker (no duplicate RAF)
     lenis.on('scroll', ScrollTrigger.update)
 
-    gsap.ticker.add((time) => {
+    const tickerCallback = (time) => {
       lenis.raf(time * 1000)
-    })
+    }
 
+    gsap.ticker.add(tickerCallback)
     gsap.ticker.lagSmoothing(0)
 
     if (isMenuOpen) {
@@ -58,8 +54,8 @@ function App() {
     }
 
     return () => {
+      gsap.ticker.remove(tickerCallback)
       lenis.destroy()
-      gsap.ticker.remove(lenis.raf)
     }
   }, [isMenuOpen])
 
