@@ -148,7 +148,7 @@ const Press = () => {
                             Baseado em <strong>Joinville, SC</strong>, Rodriz atua intensamente em todo o <strong>Sul do Brasil</strong> — com shows frequentes em cidades como <strong>Blumenau, Balneário Camboriú, Itajaí, Itapema, Florianópolis, Curitiba, Londrina, Maringá, Porto Alegre, Passo Fundo</strong> e dezenas de outras cidades de <strong>Santa Catarina, Paraná e Rio Grande do Sul</strong>.
                         </p>
                         <p>
-                            Sua atuação vai além da região Sul: Rodriz já se apresentou e realiza shows em <strong>São Paulo, Rio de Janeiro, Belo Horizonte, Brasília, Goiânia</strong> e capitais do <strong>Nordeste</strong>, consolidando-se como um dos <strong>DJs de megafunk mais requisitados do Brasil</strong>. Para contratar o DJ Rodriz para festas, casas noturnas, festivais, formaturas ou eventos corporativos, entre em contato pelo WhatsApp.
+                            Sua atuação vai além da região Sul: Rodriz também tem disponibilidade para shows em <strong>São Paulo, Rio de Janeiro, Belo Horizonte, Brasília, Goiânia</strong> e capitais do <strong>Nordeste</strong>, consolidando-se como um dos <strong>DJs de megafunk revelação do sul do Brasil</strong>. Para contratar o DJ Rodriz para festas, casas noturnas, festivais, formaturas ou eventos corporativos, entre em contato pelo WhatsApp.
                         </p>
                     </div>
                 </section>
