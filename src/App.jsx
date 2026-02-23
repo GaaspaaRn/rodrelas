@@ -17,6 +17,8 @@ const Sons = lazy(() => import('./pages/Sons'))
 const Visualizer = lazy(() => import('./pages/Visualizer'))
 const Shows = lazy(() => import('./pages/Shows'))
 const Contact = lazy(() => import('./pages/Contact'))
+const Press = lazy(() => import('./pages/Press'))
+const Contrate = lazy(() => import('./pages/Contrate'))
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -153,6 +155,8 @@ function App() {
             <Route path="/visualizer" element={<Visualizer />} />
             <Route path="/shows" element={<Shows />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/press" element={<Press />} />
+            <Route path="/contrate" element={<Contrate />} />
           </Routes>
         </Suspense>
       </main>

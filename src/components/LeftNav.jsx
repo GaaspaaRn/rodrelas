@@ -37,14 +37,17 @@ const LeftNav = ({ className }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const isHome = location.pathname === '/';
+
     return (
         <nav className={`left-nav-container ${className || ''}`}>
             {links.map((link) => {
                 const isActive = activeSection === link.id;
+                const href = isHome ? link.path : `/${link.path}`;
                 return (
                     <a
                         key={link.name}
-                        href={link.path}
+                        href={href}
                         className={`nav-link ${isActive ? 'active' : ''}`}
                     >
                         {link.name}
