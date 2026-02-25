@@ -33,10 +33,10 @@ const homeJsonLd = {
 
 const Home = () => {
     // Media Arrays
-    const videosSet1 = ['/videos/rodriz.mp4', '/videos/rodriz1.mp4'];
-    const videosSet2 = ['/videos/rodriz2.mp4', '/videos/rodriz3.mp4'];
-    const videosSet3 = ['/videos/rodriz4.mp4', '/videos/rodriz5.mp4'];
-    const videosSet4 = ['/videos/rodriz6.mp4', '/videos/rodriz7.mp4'];
+    const videosSet1 = ['/videos/rodriz.webm', '/videos/rodriz1.webm'];
+    const videosSet2 = ['/videos/rodriz2.webm', '/videos/rodriz3.webm'];
+    const videosSet3 = ['/videos/rodriz4.webm', '/videos/rodriz5.webm'];
+    const videosSet4 = ['/videos/rodriz6.webm', '/videos/rodriz7.webm'];
 
     useEffect(() => {
         const uiElements = document.querySelectorAll(".side-nav, .social-sidebar, footer, .app-header-logo, .desktop-hero-logo, .scroll-indicator");
