@@ -190,7 +190,7 @@ const Press = () => {
                     <h2>Press Kit</h2>
                     <p>Baixe o press kit completo com fotos em alta resolução, rider técnico e informações para imprensa.</p>
                     <a
-                        href="https://drive.google.com/drive/folders/PRESS_KIT_LINK"
+                        href="https://drive.google.com/drive/folders/1hUcuHI1atpZjkxFklPqpAWP13L72G_hz?usp=drive_link"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="press-download-btn"
