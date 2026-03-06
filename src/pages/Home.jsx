@@ -176,10 +176,8 @@ const Home = () => {
 
                         <div className="shows-list">
                             {[
-                                { day: "06", month: "FEV", location: "CURITIBA, PR", venue: "LEVEL CLUB" },
-                                { day: "07", month: "FEV", location: "FLORIANOPOLIS, SC", venue: "P12 BEACH CLUB" },
-                                { day: "13", month: "FEV", location: "JOINVILLE, SC", venue: "SQUARE GARDEN" },
-                                { day: "14", month: "FEV", location: "PORTO BELO, SC", venue: "SURF CLUB" }
+                                { day: "07", month: "MAR", location: "CANELIHA, SC", venue: "INVICTOS CLUB" },
+                                { day: "14", month: "MAR", location: "OTACILIO COSTA, SC", venue: "JET FLOREST" },
                             ].map((show, index) => (
                                 <div key={index} className="show-item">
                                     <div className="show-date">
