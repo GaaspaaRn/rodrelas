@@ -107,7 +107,7 @@ const Home = () => {
                         color: 'white', opacity: 0.9, textTransform: 'uppercase', margin: 0,
                         mixBlendMode: 'difference'
                     }}>
-                        DJ & Produtor
+                       DJ Rodriz / DJ & Produtor
                     </p>
                 </div>
 
@@ -221,7 +221,7 @@ const Home = () => {
                             </div>
                             <div className="contact-content-wrapper">
                                 <p className="contact-bio mobile-hidden">
-                                    Rodriz, DJ e produtor musical, iniciou sua trajetória aos 16 anos, produzindo com foco em energia de pista e impacto sonoro.
+                                    DJ Rodriz, é DJ e produtor musical, iniciou sua trajetória aos 16 anos, produzindo com foco em energia de pista e impacto sonoro.
                                 </p>
                                 <p className="contact-bio mobile-hidden">
                                     Aos 18 anos, consolidou seu nome e foi reconhecido em 2025 como uma das revelações do ano.
