@@ -178,6 +178,7 @@ const Home = () => {
                             {[
                                 { day: "07", month: "MAR", location: "CANELIHA, SC", venue: "INVICTOS CLUB" },
                                 { day: "14", month: "MAR", location: "OTACILIO COSTA, SC", venue: "JET FLOREST" },
+                                { day: "14", month: "MAR", location: "LAGES, SC", venue: "747 PUB" },
                             ].map((show, index) => (
                                 <div key={index} className="show-item">
                                     <div className="show-date">
