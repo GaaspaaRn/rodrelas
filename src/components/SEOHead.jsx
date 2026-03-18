@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SITE_NAME = 'DJ Rodriz';
-const SITE_URL = 'https://djrodriz.com';
+const SITE_URL = 'https://www.djrodriz.com';
 const DEFAULT_IMAGE = `${SITE_URL}/fotos/rodriz-opengraph.jpg`;
 const DEFAULT_DESCRIPTION = 'DJ Rodriz — DJ e Produtor Musical especialista em megafunk. Contrate o melhor DJ do Sul do Brasil para festas e eventos em Santa Catarina, Paraná e Rio Grande do Sul.';
 

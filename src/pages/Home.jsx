@@ -17,8 +17,8 @@ const homeJsonLd = {
     "alternateName": "Rodriz",
     "jobTitle": "DJ e Produtor Musical",
     "description": "DJ e produtor musical especialista em megafunk, reconhecido como uma das revelações de 2025. Um dos nomes mais promissores da cena do Sul do Brasil.",
-    "url": "https://djrodriz.com",
-    "image": "https://djrodriz.com/fotos/dj-rodriz-foto.png",
+    "url": "https://www.djrodriz.com",
+    "image": "https://www.djrodriz.com/fotos/dj-rodriz-foto.png",
     "knowsAbout": ["Megafunk", "DJ Set", "Produção Musical", "Funk"],
     "workLocation": {
         "@type": "Place",

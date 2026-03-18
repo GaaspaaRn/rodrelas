@@ -53,7 +53,7 @@ const faqJsonLd = {
             "provider": {
                 "@type": "Person",
                 "name": "DJ Rodriz",
-                "url": "https://djrodriz.com"
+                "url": "https://www.djrodriz.com"
             },
             "areaServed": {
                 "@type": "Country",
@@ -65,7 +65,7 @@ const faqJsonLd = {
             "@type": "LocalBusiness",
             "name": "DJ Rodriz - Contratação de DJ Megafunk",
             "description": "Contrate o melhor DJ de megafunk do Sul do Brasil. Shows em Santa Catarina, Paraná, Rio Grande do Sul, São Paulo, Rio de Janeiro, Minas Gerais e todo o Brasil.",
-            "url": "https://djrodriz.com/contrate",
+            "url": "https://www.djrodriz.com/contrate",
             "telephone": "+55-47-99152-9726",
             "address": {
                 "@type": "PostalAddress",

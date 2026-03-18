@@ -5,13 +5,13 @@ const pressJsonLd = {
     "@graph": [
         {
             "@type": "Person",
-            "@id": "https://djrodriz.com/#person",
+            "@id": "https://www.djrodriz.com/#person",
             "name": "DJ Rodriz",
             "alternateName": "Rodriz",
             "jobTitle": "DJ e Produtor Musical de Megafunk",
             "description": "DJ e produtor musical especialista em megafunk, baseado em Joinville, Santa Catarina. Um dos nomes mais promissores da cena do Sul do Brasil, com shows em todo o país.",
-            "url": "https://djrodriz.com",
-            "image": "https://djrodriz.com/fotos/dj-rodriz-foto.png",
+            "url": "https://www.djrodriz.com",
+            "image": "https://www.djrodriz.com/fotos/dj-rodriz-foto.png",
             "knowsAbout": ["Megafunk", "DJ Set", "Produção Musical", "Funk", "Música Eletrônica"],
             "birthPlace": {
                 "@type": "Place",
@@ -34,7 +34,7 @@ const pressJsonLd = {
         },
         {
             "@type": "MusicGroup",
-            "@id": "https://djrodriz.com/#musicgroup",
+            "@id": "https://www.djrodriz.com/#musicgroup",
             "name": "DJ Rodriz",
             "genre": ["Megafunk", "Funk", "Eletrônica", "DJ Set"],
             "foundingLocation": {
